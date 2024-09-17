@@ -1,0 +1,10 @@
+Oscar,36
+Oscar,10
+Oscar,5
+ghjk,5
+ok,4
+Oscar,4
+Oscar,4
+ö,3
+Oscar,3
+fghjk,3

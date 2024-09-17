@@ -1,0 +1,11 @@
+Oscar, 100
+Filip, 99
+Patrik, 98
+Filip, 43
+David, 42
+Erik, 41
+Pjotir, 40
+Johan, 39
+Johannes, 38
+Johanna, 37
+Johannes, 36
