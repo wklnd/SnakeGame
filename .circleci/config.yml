@@ -12,8 +12,8 @@ jobs:
       - run:
           name: Compile and test
           command: |
-            javac test.java  # Replace 'test.java' with your actual Java test file name
-            java test  # Replace 'test' with the main class name if applicable
+            javac BoardTest.java  
+            java test 
 
 workflows:
   version: 2
