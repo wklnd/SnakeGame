@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 public class Snake extends JFrame {
 
     public Snake() {
-
+        System.out.println("Hej från Snake.java");
         initUI();
     }
 
