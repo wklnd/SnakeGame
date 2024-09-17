@@ -370,6 +370,10 @@ public class Board extends JPanel implements ActionListener {
         checkApple();
     }
 
+    public int getScore() {
+        return score;
+    }
+
     /*
     * Function for setting keybindings
     * and deciding direction of movement for the snake

@@ -65,4 +65,10 @@ public class BoardTest {
         }
         assertEquals(900, board.getSnakeLength());
     }
+
+    @Test
+    public void testScore() {
+        board.snakeEatsApple();
+        assertEquals(1, board.getScore());
+    }
 }
