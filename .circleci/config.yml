@@ -3,17 +3,23 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/openjdk:21.0  # Java 21 Docker image
+      - image: cimg/openjdk:21.0  # Java 21 image
 
     steps:
-      - checkout  # Checkout the code from your repository
-
-      # Compile and run your Java test file
+      - checkout
       - run:
-          name: Compile and test
+          name: Download JUnit
           command: |
-            javac src/BoardTest.java  
-            java test 
+            curl -O https://search.maven.org/remotecontent?filepath=junit/junit/4.13.2/junit-4.13.2.jar
+            curl -O https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+
+      - run:
+          name: Compile Tests
+          command: javac -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar src/*.java
+
+      - run:
+          name: Run Tests
+          command: java -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore BoardTest
 
 workflows:
   version: 2
