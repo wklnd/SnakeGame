@@ -33,15 +33,12 @@ jobs:
           path: test-results/output.txt
           destination: junit-output
 
-      # Process JUnit test results (if running on JUnit XML output)
-      - run:
-          name: Generate JUnit XML Reports
-          command: |
-            mkdir -p test-results/junit
-            java -cp bin:junit-4.13.2.jar:hamcrest-core-1.3.jar \
-              org.junit.runner.JUnitCore BoardTest \
-              | tee test-results/output.txt
-
-      # Save the results for later inspection in the CircleCI UI
+      # Save the test results for later inspection in the CircleCI UI
       - store_test_results:
           path: test-results
+
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - test
