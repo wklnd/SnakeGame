@@ -16,11 +16,13 @@ jobs:
 
       - run:
           name: Compile Java Tests
-          command: javac -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar src/*.java
+          command: |
+            mkdir -p bin
+            javac -d bin -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar src/*.java  # Compiles Java files into bin folder
 
       - run:
           name: Run JUnit Tests
-          command: java -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore BoardTest
+          command: java -cp bin:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore BoardTest
 
 workflows:
   version: 2
