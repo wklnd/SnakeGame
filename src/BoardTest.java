@@ -71,4 +71,10 @@ public class BoardTest {
         board.snakeEatsApple();
         assertEquals(1, board.getScore());
     }
+
+    @Test
+    public void testScorelol() {
+        board.snakeEatsApple();
+        assertEquals(2, board.getScore());
+    }
 }
